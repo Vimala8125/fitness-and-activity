@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Tracker Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>🏋️ Fitness Tracker Dashboard</h1>
+
+  <!-- Logout -->
+  <button onclick="logout()" style="float: right;">🚪 Logout</button>
+
+  <!-- Create Profile -->
+  <section>
+    <h2>👤 Create Profile</h2>
+    <input type="text" id="name" placeholder="Name" />
+    <input type="number" id="age" placeholder="Age" />
+    <input type="number" id="weight" placeholder="Weight (kg)" />
+    <select id="goal">
+      <option value="">Select Goal</option>
+      <option value="Weight Loss">Weight Loss</option>
+      <option value="Muscle Gain">Muscle Gain</option>
+      <option value="Flexibility">Flexibility</option>
+    </select>
+    <button onclick="saveProfile()">Save Profile</button>
+    <p id="profileMessage"></p>
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <button onclick="showSection('workout')">🏃 Workout Plan</button>
+    <button onclick="showSection('nutrition')">🥗 Nutrition Plan</button>
+    <button onclick="showSection('community')">💬 Community Wall</button>
+    <button onclick="showSection('friends')">🤝 Friends & Challenges</button>
+  </nav>
+
+  <!-- Sections (initially hidden) -->
+  <div id="workout" class="section">
+    <h2>Workout Plan</h2>
+    <p>Start your fitness routine:</p>
+    <ul>
+      <li>💪 Strength Training</li>
+      <li>🧘 Yoga</li>
+      <li>🏃 Cardio</li>
+    </ul>
+  </div>
+
+  <div id="nutrition" class="section">
+    <h2>Nutrition Plan</h2>
+    <ul>
+      <li>🥗 High Protein Meal</li>
+      <li>🍌 Balanced Breakfast</li>
+      <li>🍲 Detox Plan</li>
+    </ul>
+  </div>
+
+  <div id="community" class="section">
+    <h2>Community Wall</h2>
+    <textarea id="newPost" placeholder="Share your progress..."></textarea>
+    <button onclick="addPost()">Post</button>
+    <div id="posts"></div>
+  </div>
+
+  <div id="friends" class="section">
+    <h2>Friends & Challenges</h2>
+    <p>Send friend requests:</p>
+    <ul>
+      <li>John <button onclick="sendRequest('John')">Add</button></li>
+      <li>Emma <button onclick="sendRequest('Emma')">Add</button></li>
+    </ul>
+    <p id="friendMessage"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
